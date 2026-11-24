@@ -1,0 +1,1068 @@
+/* src/css/sections.css - All Homepage Editorial Sections & Footer */
+
+/* ==========================================================================
+   Luxury Infinite Brand Marquee Ticker
+   ========================================================================== */
+.luxury-marquee-strip {
+  background-color: var(--color-black);
+  color: var(--color-champagne);
+  padding: 16px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.luxury-marquee-track {
+  display: inline-flex;
+  gap: 48px;
+  animation: marqueeScroll 35s linear infinite;
+}
+
+.luxury-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.marquee-separator {
+  color: var(--color-gold);
+  font-size: 0.6rem;
+}
+
+@keyframes marqueeScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   Section 1: New Arrivals
+   ========================================================================== */
+.new-arrivals-section {
+  background-color: var(--color-bg-primary);
+}
+
+.products-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.5vw, 32px);
+}
+
+.products-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.section-footer-cta {
+  text-align: center;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+
+/* ==========================================================================
+   Section 2: Shop by Style (Editorial Asymmetrical Grid)
+   ========================================================================== */
+.shop-by-style-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border-delicate);
+  border-bottom: 1px solid var(--color-border-delicate);
+}
+
+.style-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(16px, 2vw, 28px);
+}
+
+.style-card {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  background-color: var(--color-champagne);
+  min-height: 380px;
+}
+
+.style-card-tall {
+  grid-column: span 6;
+  min-height: 520px;
+}
+
+.style-card-standard {
+  grid-column: span 3;
+}
+
+.style-card-wide {
+  grid-column: span 6;
+}
+
+.style-card-img-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.style-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.style-card:hover .style-card-img {
+  transform: scale(1.06);
+}
+
+.style-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 22, 20, 0.1) 0%,
+    rgba(23, 22, 20, 0.35) 60%,
+    rgba(23, 22, 20, 0.75) 100%
+  );
+  transition: background 0.4s ease;
+}
+
+.style-card:hover .style-card-overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(23, 22, 20, 0.15) 0%,
+    rgba(23, 22, 20, 0.45) 50%,
+    rgba(23, 22, 20, 0.85) 100%
+  );
+}
+
+.style-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(20px, 3vw, 36px);
+  z-index: 2;
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+}
+
+.style-card-count {
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 6px;
+}
+
+.style-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2.5vw, 2.1rem);
+  color: var(--color-white);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.style-card-link-text {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transform: translateY(6px);
+  opacity: 0.85;
+  transition: all var(--transition-fast);
+}
+
+.style-card:hover .style-card-link-text {
+  transform: translateY(0);
+  opacity: 1;
+  color: var(--color-champagne);
+}
+
+/* ==========================================================================
+   Section 3: Featured Collection ("The Art of Modern Dressing")
+   ========================================================================== */
+.featured-collection-section {
+  background-color: var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.editorial-collection-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 6vw, 80px);
+  align-items: center;
+}
+
+.editorial-visuals {
+  position: relative;
+}
+
+.editorial-img-primary {
+  width: 88%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  box-shadow: var(--shadow-medium);
+}
+
+.editorial-img-secondary {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  width: 48%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 10px solid var(--color-bg-primary);
+  box-shadow: var(--shadow-medium);
+}
+
+.editorial-content-block {
+  padding: clamp(20px, 4vw, 40px) 0;
+}
+
+.editorial-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-style: italic;
+  line-height: 1.35;
+  color: var(--color-text-primary);
+  margin: var(--space-md) 0 var(--space-lg);
+  border-left: 2px solid var(--color-gold);
+  padding-left: var(--space-md);
+}
+
+.editorial-prose {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.editorial-stats-row {
+  display: flex;
+  gap: clamp(24px, 4vw, 48px);
+  margin-bottom: var(--space-xl);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-delicate);
+}
+
+.editorial-stat-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--color-black);
+  line-height: 1;
+}
+
+.editorial-stat-label {
+  font-size: 0.75rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   Section 4: The Floree Experience (Brand Storytelling)
+   ========================================================================== */
+.floree-experience-section {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  position: relative;
+}
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: center;
+}
+
+.experience-content {
+  padding: clamp(20px, 4vw, 40px) 0;
+}
+
+.experience-content .subheading {
+  color: var(--color-champagne);
+}
+
+.experience-content h2 {
+  color: var(--color-white);
+  margin-bottom: var(--space-lg);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  line-height: 1.15;
+}
+
+.experience-content p {
+  color: rgba(248, 245, 240, 0.85);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+}
+
+.experience-image-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience-img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+.experience-tag-card {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  background-color: rgba(23, 22, 20, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 16px 24px;
+  border-left: 2px solid var(--color-gold);
+}
+
+.experience-tag-card span {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--color-champagne);
+}
+
+/* ==========================================================================
+   Section 5: Trending Now (Product Carousel / Grid)
+   ========================================================================== */
+.trending-section {
+  background-color: var(--color-bg-primary);
+}
+
+.trending-carousel-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.carousel-nav-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.carousel-arrow-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-border-medium);
+  background-color: var(--color-white);
+  color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.carousel-arrow-btn:hover {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.trending-slider-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  gap: clamp(16px, 2.5vw, 32px);
+  padding-bottom: 16px;
+}
+
+.trending-slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+.trending-slider-item {
+  flex: 0 0 calc(25% - 24px);
+  min-width: 260px;
+}
+
+/* ==========================================================================
+   Section 6: Fashion Campaign (Second Cinematic Section)
+   ========================================================================== */
+.campaign-banner-section {
+  position: relative;
+  width: 100%;
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-black);
+  overflow: hidden;
+}
+
+.campaign-media-wrapper {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.campaign-video, .campaign-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.campaign-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(23, 22, 20, 0.8) 0%,
+    rgba(23, 22, 20, 0.5) 50%,
+    rgba(23, 22, 20, 0.3) 100%
+  );
+}
+
+.campaign-content {
+  position: relative;
+  z-index: 2;
+  max-width: 620px;
+  color: var(--color-white);
+}
+
+.campaign-content .subheading {
+  color: var(--color-champagne);
+}
+
+.campaign-content h2 {
+  color: var(--color-white);
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  margin-bottom: var(--space-md);
+  line-height: 1.1;
+}
+
+.campaign-content p {
+  color: rgba(248, 245, 240, 0.9);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin-bottom: var(--space-xl);
+}
+
+/* ==========================================================================
+   Section 7: Why Choose Floree Fashion? (The Floree Difference)
+   ========================================================================== */
+.floree-difference-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-border-delicate);
+  border-bottom: 1px solid var(--color-border-delicate);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(16px, 2.5vw, 32px);
+}
+
+.benefit-card {
+  padding: clamp(24px, 3vw, 36px) clamp(16px, 2vw, 24px);
+  background-color: var(--color-bg-primary);
+  border: 1px solid var(--color-border-delicate);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform var(--transition-smooth), border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-subtle);
+}
+
+.benefit-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold);
+  margin-bottom: var(--space-md);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.benefit-card:hover .benefit-icon-wrap {
+  background-color: var(--color-black);
+  color: var(--color-champagne);
+  border-color: var(--color-black);
+}
+
+.benefit-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  margin-bottom: 8px;
+}
+
+.benefit-desc {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* ==========================================================================
+   Section 8: Customer Experiences ("Styled, Loved & Shared")
+   ========================================================================== */
+.testimonials-section {
+  background-color: var(--color-bg-primary);
+}
+
+.reviews-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 36px);
+}
+
+.review-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-delicate);
+  padding: clamp(24px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-subtle);
+}
+
+.review-stars {
+  display: flex;
+  gap: 3px;
+  color: #D4AF37;
+  margin-bottom: var(--space-md);
+}
+
+.review-quote-text {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.65;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.review-author-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--color-border-delicate);
+  padding-top: var(--space-md);
+}
+
+.author-info-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text-primary);
+}
+
+.author-location {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.product-tag-pill {
+  font-size: 0.6875rem;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-brown);
+  background-color: var(--color-bg-primary);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+}
+
+/* ==========================================================================
+   Section 9: Instagram Gallery ("Follow the Floree Style")
+   ========================================================================== */
+.instagram-section {
+  background-color: var(--color-white);
+}
+
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+}
+
+.insta-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  display: block;
+}
+
+.insta-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.insta-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(23, 22, 20, 0.65);
+  color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.insta-item:hover .insta-img {
+  transform: scale(1.08);
+}
+
+.insta-item:hover .insta-overlay {
+  opacity: 1;
+}
+
+.insta-cta-wrap {
+  text-align: center;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+/* ==========================================================================
+   Section 10: Newsletter ("Stay in Style with Floree")
+   ========================================================================== */
+.newsletter-section {
+  background-color: var(--color-champagne);
+  padding: clamp(64px, 8vw, 100px) 0;
+  border-top: 1px solid var(--color-border-delicate);
+}
+
+.newsletter-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 0;
+  margin-top: var(--space-lg);
+  box-shadow: var(--shadow-subtle);
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  padding: 16px 20px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-white);
+  font-size: 0.9375rem;
+  color: var(--color-black);
+}
+
+.newsletter-input:focus {
+  outline: none;
+  border-color: var(--color-black);
+}
+
+.newsletter-btn {
+  flex-shrink: 0;
+  border-radius: var(--radius-none);
+}
+
+.newsletter-success-box {
+  display: none;
+  margin-top: var(--space-md);
+  padding: 16px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-medium);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.voucher-code-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background-color: var(--color-black);
+  color: var(--color-champagne);
+  font-family: monospace;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-top: 6px;
+}
+
+/* ==========================================================================
+   Section 11: Premium Footer
+   ========================================================================== */
+.site-footer {
+  background-color: var(--color-black);
+  color: var(--color-ivory);
+  padding-top: clamp(64px, 8vw, 100px);
+  padding-bottom: clamp(32px, 4vw, 48px);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr;
+  gap: clamp(32px, 4vw, 64px);
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+.footer-brand-col .brand-name {
+  color: var(--color-white);
+  font-size: 1.75rem;
+}
+
+.footer-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.125rem;
+  color: var(--color-champagne);
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.footer-brand-desc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: rgba(248, 245, 240, 0.7);
+  max-width: 340px;
+}
+
+.footer-col-title {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: var(--space-md);
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-nav-list a {
+  font-size: 0.875rem;
+  color: rgba(248, 245, 240, 0.75);
+  transition: color var(--transition-fast);
+}
+
+.footer-nav-list a:hover {
+  color: var(--color-white);
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: rgba(248, 245, 240, 0.75);
+  margin-bottom: 12px;
+}
+
+.footer-contact-item svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--color-champagne);
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-lg);
+  font-size: 0.8125rem;
+  color: rgba(248, 245, 240, 0.6);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.payment-methods-strip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.payment-pill {
+  font-size: 0.6875rem;
+  padding: 4px 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: var(--tracking-wide);
+}
+
+
+
+/* ==========================================================================
+   Editorial Asymmetric Grid (Section 4: New Season Collection)
+   ========================================================================== */
+.editorial-asym-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(24px, 3.5vw, 48px);
+  align-items: stretch;
+}
+
+.editorial-asym-col {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vw, 40px);
+}
+
+.editorial-asym-card {
+  position: relative;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border-delicate);
+  overflow: hidden;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  display: flex;
+  flex-direction: column;
+}
+
+.editorial-asym-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.editorial-asym-card.tall-card {
+  height: 100%;
+}
+
+.editorial-asym-card.tall-card .asym-img-wrap {
+  height: clamp(380px, 45vw, 560px);
+}
+
+.editorial-asym-card.medium-card .asym-img-wrap {
+  height: clamp(220px, 22vw, 280px);
+}
+
+.asym-img-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-champagne);
+}
+
+.asym-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-asym-card:hover .asym-img {
+  transform: scale(1.05);
+}
+
+.asym-content {
+  padding: clamp(20px, 2.5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.asym-badge {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.asym-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+  font-weight: 400;
+  color: var(--color-text-primary);
+  margin-bottom: 10px;
+}
+
+.asym-text {
+  font-size: 0.9375rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.asym-link {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.asym-link:hover {
+  color: var(--color-gold);
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .editorial-asym-grid {
+    grid-template-columns: 1fr;
+  }
+  .editorial-asym-card.tall-card .asym-img-wrap {
+    height: 380px;
+  }
+}
+
+/* ==========================================================================
+   Shop by Category (Section 5: 5 Category Cards Grid)
+   ========================================================================== */
+.category-cards-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: clamp(12px, 1.8vw, 24px);
+}
+
+.category-showcase-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background-color: var(--color-champagne);
+  aspect-ratio: 3 / 4.4;
+  group: relative;
+}
+
+.cat-image-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.cat-zoom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-showcase-card:hover .cat-zoom-img {
+  transform: scale(1.08);
+}
+
+.cat-overlay-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(29, 29, 29, 0.05) 0%,
+    rgba(29, 29, 29, 0.2) 50%,
+    rgba(29, 29, 29, 0.85) 100%
+  );
+  transition: opacity var(--transition-medium);
+}
+
+.category-showcase-card:hover .cat-overlay-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(29, 29, 29, 0.1) 0%,
+    rgba(29, 29, 29, 0.35) 40%,
+    rgba(29, 29, 29, 0.92) 100%
+  );
+}
+
+.cat-meta-box {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(16px, 2vw, 24px);
+  z-index: 2;
+  color: var(--color-white);
+  transition: transform var(--transition-medium);
+}
+
+.cat-counter {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.cat-card-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
+  font-weight: 400;
+  line-height: 1.2;
+  margin-bottom: 8px;
+  color: var(--color-white);
+}
+
+.cat-explore-link {
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  display: block;
+  opacity: 0.9;
+  transform: translateY(4px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.category-showcase-card:hover .cat-explore-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1100px) {
+  .category-cards-grid-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .category-cards-grid-5 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

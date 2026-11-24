@@ -1,0 +1,80 @@
+/* src/css/variables.css - FLOREE Design Tokens */
+:root {
+  /* FLOREE Master Luxury Palette */
+  --color-ivory: #F8F6F1;
+  --color-champagne: #E8DFD2;
+  --color-taupe: #B5A596;
+  --color-espresso: #33251F;
+  --color-white: #FFFFFF;
+  --color-charcoal: #1D1D1D;
+
+  /* Semantic Theme Mappings */
+  --color-bg-primary: #F8F6F1;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-subtle: #F3EFE8;
+  --color-bg-dark: #1D1D1D;
+
+  --color-text-primary: #1D1D1D;
+  --color-text-secondary: #5C5249;
+  --color-text-muted: #8E8377;
+  --color-text-light: #F8F6F1;
+
+  --color-border-delicate: rgba(29, 29, 29, 0.08);
+  --color-border-medium: rgba(29, 29, 29, 0.16);
+  --color-border-strong: rgba(29, 29, 29, 0.35);
+
+  --color-accent: #B5A596;
+  --color-accent-hover: #33251F;
+  --color-gold: #C2A980;
+  --color-error: #B94A48;
+  --color-success: #4D7C5D;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.03em;
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.14em;
+  --tracking-widest: 0.28em;
+
+  /* Spacing Scale */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+  --space-5xl: 128px;
+
+  /* Layout */
+  --max-content-width: 1440px;
+  --container-padding: clamp(18px, 4.5vw, 56px);
+  --header-height: 84px;
+  --announcement-height: 36px;
+
+  /* Shadows & Elevation */
+  --shadow-subtle: 0 4px 20px rgba(29, 29, 29, 0.04);
+  --shadow-medium: 0 10px 30px rgba(29, 29, 29, 0.08);
+  --shadow-drawer: -10px 0 40px rgba(29, 29, 29, 0.15);
+  --shadow-modal: 0 20px 60px rgba(29, 29, 29, 0.25);
+
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-reveal: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Radii */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-full: 9999px;
+}

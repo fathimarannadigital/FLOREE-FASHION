@@ -1,0 +1,303 @@
+/* src/css/responsive.css - Fluid Responsive Media Queries */
+
+/* Tablet & Mobile (<= 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 72px;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .products-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .products-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .style-card-tall {
+    grid-column: span 12;
+    min-height: 420px;
+  }
+
+  .style-card-standard {
+    grid-column: span 6;
+    min-height: 320px;
+  }
+
+  .style-card-wide {
+    grid-column: span 12;
+    min-height: 360px;
+  }
+
+  .editorial-collection-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .editorial-img-primary {
+    width: 100%;
+  }
+
+  .editorial-img-secondary {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    margin-top: -80px;
+    margin-left: auto;
+  }
+
+  .experience-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .benefit-card:last-child {
+    grid-column: span 2;
+  }
+
+  .reviews-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .insta-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand-col {
+    grid-column: span 2;
+  }
+
+  .pdp-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .pdp-details {
+    position: static;
+  }
+
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .order-summary-box {
+    position: static;
+  }
+
+  .about-split-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .values-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .search-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Devices (<= 640px) */
+@media (max-width: 640px) {
+  :root {
+    --header-height: 64px;
+    --announcement-height: 32px;
+  }
+
+  .announcement-bar {
+    font-size: 0.6875rem;
+    padding: 6px 12px;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+    letter-spacing: 0.16em;
+  }
+
+  .brand-tagline-micro {
+    display: none;
+  }
+
+  .action-btn-currency {
+    display: none;
+  }
+
+  .hero-section {
+    min-height: 560px;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .hero-controls {
+    bottom: 20px;
+    right: 16px;
+  }
+
+  .hero-scroll-indicator {
+    display: none;
+  }
+
+  /* 2-Column Mobile Product Grid per Prompt Specifications */
+  .products-grid-4,
+  .products-grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-image-wrapper {
+    margin-bottom: 8px;
+  }
+
+  .product-title {
+    font-size: 0.9375rem;
+  }
+
+  .product-price {
+    font-size: 0.875rem;
+  }
+
+  .product-badge {
+    top: 8px;
+    left: 8px;
+    font-size: 0.5625rem;
+    padding: 2px 6px;
+  }
+
+  .btn-wishlist {
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .product-actions-overlay {
+    display: none; /* Mobile uses direct PDP navigation */
+  }
+
+  .style-card-standard,
+  .style-card-wide,
+  .style-card-tall {
+    grid-column: span 12;
+    min-height: 260px;
+  }
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .benefit-card:last-child {
+    grid-column: span 1;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+
+  .footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-brand-col {
+    grid-column: span 1;
+  }
+
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* PDP Mobile */
+  .pdp-gallery {
+    flex-direction: column-reverse;
+  }
+
+  .pdp-thumbnails {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .pdp-thumb-item {
+    width: 70px;
+  }
+
+  .size-options-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .pdp-actions-row {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    background-color: var(--color-white);
+    border-top: 1px solid var(--color-border-delicate);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+    z-index: 99;
+  }
+
+  .pdp-section {
+    padding-bottom: 120px;
+  }
+
+  .form-row-2, .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .search-results-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-drawer {
+    max-width: 100%;
+  }
+}
+
